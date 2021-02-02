@@ -1,6 +1,6 @@
 import pytest
 
-from .hello_world import exam
+from .exam import get_hello_world
 
 
 class Case:
