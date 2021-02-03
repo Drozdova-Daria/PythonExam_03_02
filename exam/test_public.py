@@ -1,6 +1,6 @@
 import pytest
 
-from main import fill_scientist_seq_count
+from .main import fill_scientist_seq_count
 
 
 class Case:
