@@ -22,13 +22,18 @@ def read_lines_in_file(file, dict_scientist_scientists):
         fill_dict_scientist_scientists(dict_scientist_scientists, scientists_seq)
 
 
+def fill_scientist_seq_count(dict_scientist_scientists):
+    scientist_seq_count = {}
+    for science_name, seq_count in GraphIterator(dict_scientist_scientists):
+        scientist_seq_count[science_name] = seq_count
+    return scientist_seq_count
+
 def main():
     dict_scientist_scientists = {}
     with DirReader("data") as file_names:
         for file in file_names:
             read_lines_in_file(file, dict_scientist_scientists)
-    for science_name, seq_count in GraphIterator(dict_scientist_scientists):
-        print(science_name, ":", seq_count)
-
+    scientist_seq_count = fill_scientist_seq_count(dict_scientist_scientists)
+   
 
 main()
